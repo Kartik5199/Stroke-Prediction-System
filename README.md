@@ -1,131 +1,121 @@
 
-🧠 Stroke Prediction Web App
 
-🌟 A Machine Learning-powered web application to predict stroke risk based on user health data.
-This project uses Flask, Scikit-learn, and Tailwind CSS to provide a simple yet effective stroke prediction tool.
+---
 
-🎯 Key Features
+# 🏥 Stroke Prediction Web App  
 
-✅ Easy-to-Use Interface – Clean UI built with Tailwind CSS
+This is a **Flask-based web application** for predicting the risk of stroke using **machine learning**. The model is trained on patient data and uses **StandardScaler** for feature scaling.  
 
-✅ Machine Learning Powered – Uses a pre-trained model for prediction
+---
 
-✅ Real-time Prediction – Get results instantly
+## 🚀 Features  
+✅ User-friendly web interface (HTML + Tailwind CSS)  
+✅ Predicts stroke risk based on user input  
+✅ Uses a **trained ML model** with **StandardScaler**  
+✅ Backend powered by **Flask**  
+✅ Simple and lightweight  
 
-✅ Scalable & Lightweight – Built with Flask for easy deployment
+---
 
-✅ StandardScaler Applied – Ensures accurate predictions
+## 📸 Demo  
+
+ 
+
+### 🖥 Web App Interface  
+![UI Screenshot 1](demo.png)  
 
 
-🛠 Tech Stack
+---
 
-Technology	Purpose
+## 📂 Project Structure  
 
-🐍 Python	Backend Processing
+```
+stroke-prediction-app/
+│── static/               # (Optional) Static files (CSS, JS, Images)
+│── templates/
+│   ├── index.html        # Frontend UI with Tailwind CSS
+│── demo/                 # Folder to store UI screenshots
+│   ├── screenshot1.png   
+│   ├── screenshot2.png   
+│── Stroke_model.pkl      # Trained machine learning model
+│── scaler.pkl            # StandardScaler used for feature scaling
+│── app.py                # Flask backend
+│── requirements.txt      # Required dependencies
+│── README.md             # Project documentation
+```
 
-🔥 Flask	Web Framework
+---
 
-🎨 Tailwind CSS	Frontend Styling
+## 🛠 Installation  
 
-📊 Scikit-learn	Machine Learning Model
-
-📌 Pandas & NumPy	Data Processing
-
-🧠 StandardScaler	Feature Scaling
-
-🚀 Getting Started
-
-Follow these simple steps to run the project locally!
-
-1️⃣ Clone the Repository
-
-git clone https://github.com/Kartik5199/Stroke-Prediction-System
-
+### 1️⃣ **Clone the Repository**
+```bash
+git clone https://github.com/your-repo/stroke-prediction.git
 cd stroke-prediction
+```
 
-2️⃣ Install Dependencies
+### 2️⃣ **Create a Virtual Environment (Optional)**
+```bash
+python -m venv venv
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate     # On Windows
+```
 
-Ensure Python is installed, then run:
-
+### 3️⃣ **Install Dependencies**
+```bash
 pip install -r requirements.txt
+```
 
-3️⃣ Run the Flask App
+---
 
-bash
+## 🏃‍♂️ Running the App  
 
-Copy
-
-Edit
-
+```bash
 python app.py
+```
+Your app will be running at **http://127.0.0.1:5000/** 🎉  
 
-The app will be available at: http://127.0.0.1:5000/ 🎉
+---
 
-🎨 UI Overview
+## 📊 Input Features & Value Mappings  
 
-🖥️ Web Interface Preview:
+| Feature         | Description | Encodings |
+|---------------|------------|-----------|
+| `gender` | Gender | `Male=0`, `Female=1`, `Other=2` |
+| `age` | Age in years | Numeric |
+| `hypertension` | High blood pressure | `No=0`, `Yes=1` |
+| `heart_disease` | Heart disease history | `No=0`, `Yes=1` |
+| `ever_married` | Marital status | `No=0`, `Yes=1` |
+| `work_type` | Type of work | `Private=0`, `Self-employed=1`, `children=2`, `Govt_job=3`, `Never_worked=4` |
+| `Residence_type` | Living area | `Urban=1`, `Rural=0` |
+| `avg_glucose_level` | Average glucose level | Numeric |
+| `bmi` | Body Mass Index | Numeric |
+| `smoking_status` | Smoking history | `never smoked=0`, `Unknown=1`, `formerly smoked=2`, `smokes=3` |
 
-<img src="demo.png" alt="Stroke Prediction UI" width="800">
+---
 
-Input Fields: Enter your health data (age, gender, BMI, glucose level, etc.).
+## 🐛 Troubleshooting  
 
-Prediction Button: Click "Predict" to check stroke risk.
+- If you get **"ModuleNotFoundError"**, make sure you installed dependencies using:
+  ```bash
+  pip install -r requirements.txt
+  ```
+- If the app does not start, check if **Flask is installed** by running:
+  ```bash
+  python -m flask --version
+  ```
+- If the model is not predicting correctly, **verify StandardScaler is applied properly** in `app.py`.
 
-Result Display: The app will show either "High Risk of Stroke" or "Low Risk of Stroke".
+---
 
-🏆 How the Model Works
+## 🔥 Contributing  
 
-🔍 The model predicts stroke probability using features like:
+Feel free to **fork** this project, **add features**, and create a **pull request**. 🚀  
 
-Age 📅
+---
 
-Hypertension ❤️
+## 📜 License  
 
-Heart Disease 🏥
+This project is **free to use** under the **MIT License**.  
 
-Smoking Status 🚬
-
-BMI & Glucose Levels 🍏
-
-⚡ Behind the Scenes:
-
-The input data is transformed using StandardScaler.
-
-The trained model (Stroke_model.pkl) predicts the probability of stroke.
-
-If the probability is ≥ 0.5, the prediction is "High Risk", else "Low Risk".
-
-❓ Troubleshooting
-
-🔹 Solution: Ensure scaler.pkl is applied before making predictions.
-
-⚠️ Issue: ModuleNotFoundError
-
-🔹 Solution: Run pip install -r requirements.txt to install dependencies.
-
-⚠️ Issue: Web app not opening
-
-🔹 Solution: Try running flask run --host=0.0.0.0 --port=5000.
-
-🚀 Future Enhancements
-
-📊 Improve UI/UX with animations & better styling
-
-🤖 Try different ML models for higher accuracy
-
-📱 Make it mobile-friendly for better accessibility
-
-🤝 Contributing
-
-💡 Found a bug or have an idea to improve this project?
-
-Feel free to fork this repo, make your changes, and submit a pull request! 🚀
-
-📜 License
-
-🔓 This project is open-source under the MIT License.
-
-
-🌟 If you liked this project, don't forget to give it a ⭐ on GitHub! 😊
-
-Let me know if you want any further improvements or modifications! 🚀🔥
+---
