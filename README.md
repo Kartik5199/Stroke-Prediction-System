@@ -33,9 +33,7 @@ This is a **Flask-based web application** for predicting the risk of stroke usin
 stroke-prediction-app/
 │── templates/
 │   ├── index.html        # Frontend UI with Tailwind CSS
-│── demo/                 # Folder to store UI screenshots
-│   ├── screenshot1.png   
-│   ├── screenshot2.png   
+├── demo.png      
 │── Stroke_model.pkl      # Trained machine learning model
 │── scaler.pkl            # StandardScaler used for feature scaling
 │── app.py                # Flask backend
