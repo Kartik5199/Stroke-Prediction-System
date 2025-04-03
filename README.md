@@ -1,5 +1,6 @@
 
 🧠 Stroke Prediction Web App
+
 🌟 A Machine Learning-powered web application to predict stroke risk based on user health data.
 This project uses Flask, Scikit-learn, and Tailwind CSS to provide a simple yet effective stroke prediction tool.
 
