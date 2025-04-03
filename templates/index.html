@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full">
+        <h2 class="text-2xl font-bold text-center text-gray-700">Stroke Prediction</h2>
+        <form id="strokeForm" class="mt-4">
+            <div class="grid grid-cols-2 gap-4">
+                <select id="gender" class="border p-2 rounded">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <input type="number" id="age" placeholder="Age" class="border p-2 rounded">
+
+                <select id="hypertension" class="border p-2 rounded">
+                    <option value="0">No Hypertension</option>
+                    <option value="1">Has Hypertension</option>
+                </select>
+
+                <select id="heart_disease" class="border p-2 rounded">
+                    <option value="0">No Heart Disease</option>
+                    <option value="1">Has Heart Disease</option>
+                </select>
+
+                <select id="ever_married" class="border p-2 rounded">
+                    <option value="">Ever Married?</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+
+                <select id="work_type" class="border p-2 rounded">
+                    <option value="">Select Work Type</option>
+                    <option value="Private">Private</option>
+                    <option value="Self-employed">Self-employed</option>
+                    <option value="children">Children</option>
+                    <option value="Govt_job">Govt Job</option>
+                    <option value="Never_worked">Never Worked</option>
+                </select>
+
+                <select id="Residence_type" class="border p-2 rounded">
+                    <option value="">Select Residence Type</option>
+                    <option value="Urban">Urban</option>
+                    <option value="Rural">Rural</option>
+                </select>
+
+                <input type="number" id="avg_glucose_level" placeholder="Avg Glucose Level" class="border p-2 rounded">
+
+                <input type="number" id="bmi" placeholder="BMI" class="border p-2 rounded">
+
+                <select id="smoking_status" class="border p-2 rounded">
+                    <option value="">Smoking Status</option>
+                    <option value="never smoked">Never Smoked</option>
+                    <option value="Unknown">Unknown</option>
+                    <option value="formerly smoked">Formerly Smoked</option>
+                    <option value="smokes">Smokes</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="predictStroke()" class="mt-4 w-full bg-blue-500 text-white py-2 rounded">Predict</button>
+        </form>
+
+        <div id="result" class="mt-4 text-center font-semibold text-lg"></div>
+    </div>
+
+    <script>
+        async function predictStroke() {
+            const data = {
+                gender: document.getElementById("gender").value,
+                age: document.getElementById("age").value,
+                hypertension: document.getElementById("hypertension").value,
+                heart_disease: document.getElementById("heart_disease").value,
+                ever_married: document.getElementById("ever_married").value,
+                work_type: document.getElementById("work_type").value,
+                Residence_type: document.getElementById("Residence_type").value,
+                avg_glucose_level: document.getElementById("avg_glucose_level").value,
+                bmi: document.getElementById("bmi").value,
+                smoking_status: document.getElementById("smoking_status").value
+            };
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            document.getElementById("result").innerText = result.error 
+                ? `Error: ${result.error}` 
+                : `Prediction: ${result.prediction ? "High Risk of Stroke" : "Low Risk of Stroke"}`;
+        }
+    </script>
+</body>
+</html>
