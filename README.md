@@ -31,7 +31,6 @@ This is a **Flask-based web application** for predicting the risk of stroke usin
 
 ```
 stroke-prediction-app/
-│── static/               # (Optional) Static files (CSS, JS, Images)
 │── templates/
 │   ├── index.html        # Frontend UI with Tailwind CSS
 │── demo/                 # Folder to store UI screenshots
