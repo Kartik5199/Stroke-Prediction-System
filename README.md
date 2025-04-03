@@ -38,7 +38,7 @@ Follow these simple steps to run the project locally!
 bash
 Copy
 Edit
-git clone https://github.com/your-repo/stroke-prediction.git
+git clone https://github.com/Kartik5199/Stroke-Prediction-System
 cd stroke-prediction
 2️⃣ Install Dependencies
 Ensure Python is installed, then run:
