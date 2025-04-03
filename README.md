@@ -17,17 +17,6 @@ This project uses Flask, Scikit-learn, and Tailwind CSS to provide a simple yet 
 ✅ StandardScaler Applied – Ensures accurate predictions
 
 
-📂 Project Structure
-
-stroke-prediction/
-│── templates/               # HTML templates
-│   └── index.html           # Main UI
-│── Stroke_model.pkl         # Trained ML model
-│── scaler.pkl               # StandardScaler for feature scaling
-│── app.py                   # Flask backend
-│── requirements.txt         # Dependencies
-│── README.md                # Project documentation
-
 🛠 Tech Stack
 
 Technology	Purpose
